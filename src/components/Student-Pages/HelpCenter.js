@@ -23,15 +23,15 @@ const HelpCenter = () => {
   ];
 
   return (
-    <div className="p-6 pb-32 px-44 bg-gray-100 w-full overflow-y-auto">
-      <div className="flex justify-between">
+    <div className="p-4 sm:p-6 pb-32 sm:px-44 bg-gray-100 w-full overflow-y-auto">
+      <div className="flex flex-col sm:flex-row justify-between gap-4 sm:gap-0">
         <DashBoardHeader title="HELP CENTER" subTitle="Help Center" />
-        <button className="flex gap-2 text-[14px] py-2 h-10 mt-12 px-4 bg-red-500 rounded text-white">
+        <button className="flex gap-2 text-[14px] py-2 h-10 sm:mt-12 px-4 bg-red-500 rounded text-white self-start sm:self-auto">
           Have a Question
           <AiFillQuestionCircle className="mt-1" />
         </button>
       </div>
-      <div className=" grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-500 bg-gray-100 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-500 bg-gray-100 mt-4">
         {sections.map((section, idx) => (
           <div
             key={idx}
@@ -68,4 +68,5 @@ const HelpCenter = () => {
     </div>
   );
 };
+
 export default HelpCenter;

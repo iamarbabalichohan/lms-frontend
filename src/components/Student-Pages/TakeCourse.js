@@ -50,7 +50,7 @@ const TakeCourse = () => {
     },
   ];
   return (
-    <div className="p-6 pb-32 px-44 bg-gray-100 w-full overflow-y-auto">
+    <div className="p-4 sm:p-6 pb-32 sm:px-44 bg-gray-100 w-full overflow-y-auto">
       <nav className="text-[11px] text-gray-400 mb-4">
         <DashBoardHeader
           title="COURSES"
@@ -65,11 +65,11 @@ const TakeCourse = () => {
             <iframe
               src="https://player.vimeo.com/video/77091974"
               title="Course Video"
-              className="w-full h-80"
+              className="w-full h-48 sm:h-64 md:h-80"
               allowFullScreen
             ></iframe>
           </div>
-          <div className="bg-white p-4 rounded shadow mb-6">
+          <div className="bg-white p-4 rounded shadow mb-6 mt-4 sm:mt-0">
             <p className="text-gray-700 text-sm">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum
               dicta eius enim inventoreus optio ratione veritatis. Beatae
@@ -107,7 +107,7 @@ const TakeCourse = () => {
           </div>
         </div>
 
-        <div className="w-72 flex flex-col gap-5">
+        <div className="w-full lg:w-72 flex flex-col gap-5">
           <div className="bg-white px-6 py-4 rounded shadow text-center">
             <button className="bg-red-500 items-center flex flex-col text-white py-2 px-4 rounded w-full mb- text-sm">
               <MdFileDownload className="text-[23px] my-1" />
@@ -116,13 +116,13 @@ const TakeCourse = () => {
           </div>
 
           <div className="bg-white px-6 py-4 rounded shadow text-center">
-            <div className="flex p-2 gap-4 border-b mb-6">
+            <div className="flex p-2 gap-4 border-b mb-6 flex-col sm:flex-row items-center sm:items-start">
               <img
                 src="https://randomuser.me/api/portraits/men/32.jpg"
                 alt="Instructor"
                 className="w-16 h-16 rounded-full mb-2"
               />
-              <div className="text-left mt-1 ">
+              <div className="text-left mt-1">
                 <h3 className="text-lg font-semibold text-gray-500">
                   Adrian Demian
                 </h3>
@@ -134,7 +134,7 @@ const TakeCourse = () => {
               in the industry. Lorem ipsum dolor sit amet, consectetur
               adipisicing elit. Facere, aut.
             </p>
-            <div className="flex gap-4 mt-5 text-gray-700">
+            <div className="flex justify-center gap-4 mt-5 text-gray-700">
               <li className="list-none bg-gray-100 p-2 rounded">
                 <i className="fab fa-facebook-f">
                   <FaFacebook />
@@ -152,28 +152,28 @@ const TakeCourse = () => {
               </li>
             </div>
           </div>
+
           <div className="bg-white px-6 py-4 text-gray-500 rounded shadow ">
-            <div className="flex gap-4 border-b pb-3">
+            <div className="flex gap-4 border-b pb-3 items-center">
               <span className="bg-gray-400 p-1 text-white">
                 <VscGraph />
               </span>
-
               <h1 className="font-[600]">Beginner</h1>
             </div>
-            <div className="flex gap-4 mt-4">
+            <div className="flex gap-4 mt-4 items-center">
               <GoClock className="text-[20px]" />
-
               <h1>
                 <span className="text-gray-700">2</span> hrs{" "}
                 <span className="text-gray-700"> 26</span> min
               </h1>
             </div>
           </div>
+
           <div className="bg-white px-6 py-2 text-gray-500 rounded shadow ">
-            <div className="flex gap-4 border-b pb-1">
+            <div className="flex gap-4 border-b pb-1 items-center">
               <h1 className="text-[21px] text-gray-500 font-[600]">Ratings</h1>
             </div>
-            <div className="flex gap-2 mt-4 text-red-600">
+            <div className="flex gap-2 mt-4 text-red-600 justify-center sm:justify-start">
               {Array(4)
                 .fill(0)
                 .map((item, index) => (
@@ -186,9 +186,12 @@ const TakeCourse = () => {
               </span>
             </div>
             <div>
-              <h1 className="text-[12px] p-1">20 ratings</h1>
+              <h1 className="text-[12px] p-1 text-center sm:text-left">
+                20 ratings
+              </h1>
             </div>
           </div>
+
           <div className="bg-white px-6 py-2 text-gray-700 rounded shadow ">
             <h1 className="flex gap-2 justify-center">
               <AiFillQuestionCircle className="mt-1" />
@@ -200,4 +203,5 @@ const TakeCourse = () => {
     </div>
   );
 };
+
 export default TakeCourse;

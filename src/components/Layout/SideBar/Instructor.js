@@ -1,14 +1,9 @@
 import {
-  FaUserGraduate,
-  FaChalkboardTeacher,
-  FaUser,
-  FaEnvelope,
   FaSearch,
   FaBookOpen,
   FaClipboard,
   FaQuestionCircle,
   FaChartBar,
-  FaGraduationCap,
   FaUsers,
 } from "react-icons/fa";
 
@@ -23,7 +18,7 @@ const InstructorLinks = ({ activeUserType, active, handleToggleNext }) => {
     { name: "Logout", icon: <FaUsers /> },
   ];
   return (
-    <div className="w-72">
+    <div className="w-full md:w- overflow-hidden">
       {activeUserType === "Instructor" && (
         <div className="mt-6">
           <h2 className="text-white text-xs uppercase mb-2">Instructor</h2>
@@ -53,4 +48,5 @@ const InstructorLinks = ({ activeUserType, active, handleToggleNext }) => {
     </div>
   );
 };
+
 export default InstructorLinks;

@@ -21,7 +21,7 @@ const StudentLinks = ({ activeUserType, active, handleToggleNext }) => {
     { name: "Logout", icon: <FaUsers /> },
   ];
   return (
-    <div>
+    <div className="w-full md:w- overflow-hidden">
       {activeUserType === "Student" && (
         <div className="mt-6">
           <h2 className="text-white text-xs uppercase mb-2">Student</h2>
@@ -51,4 +51,5 @@ const StudentLinks = ({ activeUserType, active, handleToggleNext }) => {
     </div>
   );
 };
+
 export default StudentLinks;

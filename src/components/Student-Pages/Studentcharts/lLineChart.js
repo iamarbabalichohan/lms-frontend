@@ -70,7 +70,7 @@ const options = {
 
 const LineChartComponent = () => {
   return (
-    <div style={{ width: "100%", height: 200 }}>
+    <div className="w-full h-[200px] sm:h-[250px] md:h-[300px]">
       <Line data={data} options={options} />
     </div>
   );

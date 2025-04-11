@@ -22,7 +22,7 @@ const Dashboard = () => {
     {
       title: "Learn Vue.js Fundamentals",
       progress: 25,
-      icon: "https://img.icons8.com/color/48/vue-js.png", // You can replace with better image if available
+      icon: "https://img.icons8.com/color/48/vue-js.png",
       bgColor: "#e0e0e0",
       barColor: "#3498db",
     },
@@ -64,12 +64,13 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="p-6 pb-32 px-44 bg-gray-100 w-full overflow-y-auto">
+    <div className="p-6 pb-32 px-4 md:px-10 lg:px-20 xl:px-44 bg-gray-100 w-full overflow-y-auto">
       <DashBoardHeader title="DASHBOARD" subTitle="Dashboard" />
-      <div className="flex justify-between text-[15px] border-l-4 border-l-[#2196F3] text-gray-500 items-center bg-white p-4 shadow-md rounded-md">
-        <p className="flex gap-4 ">
+
+      <div className="flex flex-col md:flex-row justify-between text-[15px] border-l-4 border-l-[#2196F3] text-gray-500 items-center bg-white p-4 shadow-md rounded-md">
+        <p className="flex gap-4 items-center mb-2 md:mb-0">
           <PiCalendarBlankThin className="text-[28px] ml-4" />
-          <span className="pt-1">
+          <span className="pt-1 text-center md:text-left">
             Your subscription ends on <strong>25 February 2015</strong>
           </span>
         </p>
@@ -78,30 +79,30 @@ const Dashboard = () => {
         </button>
       </div>
 
-      <div className="flex w-full h-[480px] gap-6 mt-6">
-        <div className="bg-white p-4 w-[60%] shadow-md rounded-md">
+      <div className="flex flex-col lg:flex-row w-full gap-6 mt-6">
+        <div className="bg-white p-4 w-full lg:w-[60%] shadow-md rounded-md">
           <div className="flex justify-between border-b pb-4 mb-4">
             <div className="flex gap-4">
               <h2 className="text-red-600 text-[32px] font-bold">116</h2>
-              <p className="flex flex-col ">
-                <span className="text-[23px] text-gray-600">Angular</span>{" "}
+              <p className="flex flex-col">
+                <span className="text-[23px] text-gray-600">Angular</span>
                 <span className="text-[12px] text-gray-500">Best Score</span>
               </p>
             </div>
             <div className="flex text-gray-500 pt-3">
-              <h1 className=" text-[15px] ">Popular Topics</h1>
+              <h1 className="text-[15px]">Popular Topics</h1>
               <MdOutlineArrowDropDown className="mt-1" />
             </div>
           </div>
           <RadarChartComponent />
         </div>
-        <div className="w-[40%]">
+        <div className="w-full lg:w-[40%]">
           <div className="bg-white p-4 shadow-md rounded-md">
             <div className="flex gap-4 border-b mb-6 pb-4">
               <h2 className="text-red-600 text-3xl font-bold">432</h2>
               <div>
-                <p className="text-[23px] text-gray-600">Experience IQ </p>
-                <p className="text-[12px] text-gray-600"> 4 Days Streak</p>
+                <p className="text-[23px] text-gray-600">Experience IQ</p>
+                <p className="text-[12px] text-gray-600">4 Days Streak</p>
               </div>
             </div>
             <LineChartComponent />
@@ -109,12 +110,11 @@ const Dashboard = () => {
           <div className="bg-white p-4 shadow-md rounded-md mt-2">
             <h3 className="text-[23px] text-gray-600">Rewards</h3>
             <p className="text-[12px] text-gray-600">
-              {" "}
               Your Latest Achievements
             </p>
-            <div className="flex justify-center space-x-2 mt-4 border-t pt-2">
+            <div className="flex flex-wrap justify-center space-x-2 mt-4 border-t pt-2">
               <span className="bg-blue-500 rounded-full p-2">
-                <FaThumbsUp className=" text-white " />
+                <FaThumbsUp className="text-white" />
               </span>
               <span className="bg-red-500 rounded-full p-2">
                 <FaStar className="text-white" />
@@ -132,10 +132,11 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-      <div className="flex w-full gap-6 text-gray-600">
-        <div className=" h-[280px] w-[60%] mt-10 bg-white rounded shadow">
-          <div className="flex justify-between p-4 border-b">
-            <div className="">
+
+      <div className="flex flex-col lg:flex-row w-full gap-6 text-gray-600">
+        <div className="w-full lg:w-[60%] mt-10 bg-white rounded shadow">
+          <div className="flex flex-col md:flex-row justify-between p-4 border-b">
+            <div>
               <h1 className="text-[23px] text-gray-600">Courses</h1>
               <p className="text-[12px] text-gray-500">YOUR RECENT COURSES</p>
             </div>
@@ -149,7 +150,8 @@ const Dashboard = () => {
             <CourseCard key={idx} {...course} />
           ))}
         </div>
-        <div className="w-[40%]">
+
+        <div className="w-full lg:w-[40%]">
           <div className="max-w-md mx-auto mt-10 bg-white rounded shadow">
             <div className="flex justify-between items-center p-4 border-b">
               <div>
@@ -168,7 +170,8 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-      <div>
+
+      <div className="mt-6">
         <QuizResults />
       </div>
     </div>

@@ -47,6 +47,8 @@ const data = {
 };
 
 const options = {
+  responsive: true,
+  maintainAspectRatio: false,
   scales: {
     r: {
       suggestedMin: 0,
@@ -60,9 +62,9 @@ const options = {
       },
       pointLabels: {
         font: {
-          size: 16, // Increase font size of labels like "JavaScript"
+          size: 14,
         },
-        color: "#333", // Optional: changes text color
+        color: "#333",
       },
     },
   },
@@ -73,7 +75,7 @@ const options = {
 
 const RadarChartComponent = () => {
   return (
-    <div className="flex h-[350px] justify-center w-full">
+    <div className="w-full sm:w-[90%] md:w-[70%] mx-auto h-[300px] sm:h-[350px]">
       <Radar data={data} options={options} />
     </div>
   );

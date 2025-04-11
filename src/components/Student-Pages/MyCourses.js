@@ -40,7 +40,7 @@ const MyCourses = () => {
     },
   ];
   return (
-    <div className="p-6 pb-32 px-44 bg-gray-100 w-full overflow-y-auto">
+    <div className="p-6 md:pb-32 md:px-44 bg-gray-100 w-full overflow-y-auto">
       <DashBoardHeader title="MY COURSES" subTitle="My Courses" />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-gray-100">
         {courses.map((course, index) => (

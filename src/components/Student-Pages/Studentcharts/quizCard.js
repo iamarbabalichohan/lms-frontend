@@ -24,13 +24,13 @@ const QuizResults = () => {
   ];
 
   return (
-    <div className="w-[59%] text-gray-600  bg-white rounded-md shadow-md overflow-hidden">
-      <div className="flex justify-between items-center p-4 border-b">
+    <div className="w-full md:w-[59%] text-gray-600 bg-white rounded-md shadow-md overflow-hidden mt-10 md:mt-0">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-4 border-b gap-2">
         <div>
-          <h2 className="text-[23px] ">Quizzes</h2>
+          <h2 className="text-[20px] sm:text-[23px]">Quizzes</h2>
           <p className="text-[12px] text-gray-400">YOUR PERFORMANCE</p>
         </div>
-        <button className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-[13px]">
+        <button className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-[13px] w-full sm:w-auto">
           Quiz results
         </button>
       </div>
@@ -38,7 +38,7 @@ const QuizResults = () => {
       {quizzes.map((quiz, index) => (
         <div
           key={index}
-          className={`flex justify-between items-center px-4 py-4 ${
+          className={`flex flex-col sm:flex-row sm:justify-between sm:items-center px-4 py-4 gap-2 ${
             index < quizzes.length - 1 ? "border-b" : ""
           }`}
         >
@@ -51,7 +51,7 @@ const QuizResults = () => {
               </span>
             </p>
           </div>
-          <div className="flex gap-2 text-right">
+          <div className="flex gap-2 justify-between sm:justify-end text-right">
             <p className="text-sm pt-1 text-gray-500">{quiz.status}</p>
             <p className={`text-xl font-semibold ${quiz.color}`}>
               {quiz.score}

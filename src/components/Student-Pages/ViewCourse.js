@@ -48,7 +48,7 @@ const CoursePage = () => {
     },
   ];
   return (
-    <div className="p-6 pb-32 px-44 bg-gray-100 w-full overflow-y-auto">
+    <div className="p-4 sm:p-6 pb-32 sm:px-12 md:px-20 lg:px-44 bg-gray-100 w-full overflow-y-auto">
       <nav className="text-[11px] text-gray-400 mb-4">
         <DashBoardHeader
           title="COURSES"
@@ -58,16 +58,16 @@ const CoursePage = () => {
       </nav>
 
       <div className="flex flex-col lg:flex-row gap-6">
-        <div className="flex-1">
+        <div className="w-full lg:flex-1">
           <div className="bg-white rounded shadow overflow-hidden ">
             <iframe
               src="https://player.vimeo.com/video/77091974"
               title="Course Video"
-              className="w-full h-80"
+              className="w-full h-64 sm:h-80"
               allowFullScreen
             ></iframe>
           </div>
-          <div className="bg-white p-4 rounded shadow mb-6">
+          <div className="bg-white p-4 rounded shadow mb-6 mt-4">
             <p className="text-gray-700 text-sm">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum
               dicta eius enim inventoreus optio ratione veritatis. Beatae
@@ -105,10 +105,10 @@ const CoursePage = () => {
           </div>
         </div>
 
-        <div className="w-72 flex flex-col gap-5">
+        <div className="w-full lg:w-72 flex flex-col gap-5">
           <div className="bg-white px-6 py-4 rounded shadow text-center">
             <button className="bg-red-500 text-white py-2 px-4 rounded w-full mb-4 text-sm">
-              Get All Courses <br />{" "}
+              Get All Courses <br />
               <span className="font-semibold">$9 / month</span>
             </button>
             <div className="relative my-4 mb-6">
@@ -118,19 +118,19 @@ const CoursePage = () => {
               </span>
             </div>
             <button className="border border-gray-300 text-gray-500 py-2 px-4 rounded w-full text-sm">
-              Purchase Course <br />{" "}
+              Purchase Course <br />
               <span className="font-semibold text-gray-600">$25 USD</span>
             </button>
           </div>
 
           <div className="bg-white px-6 py-4 rounded shadow text-center">
-            <div className="flex p-2 gap-4 border-b mb-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 p-2 gap-4 border-b mb-6">
               <img
                 src="https://randomuser.me/api/portraits/men/32.jpg"
                 alt="Instructor"
                 className="w-16 h-16 rounded-full mb-2"
               />
-              <div className="text-left mt-1 ">
+              <div className="text-left mt-1">
                 <h3 className="text-lg font-semibold text-gray-500">
                   Adrian Demian
                 </h3>
@@ -142,50 +142,44 @@ const CoursePage = () => {
               in the industry. Lorem ipsum dolor sit amet, consectetur
               adipisicing elit. Facere, aut.
             </p>
-            <div className="flex gap-4 mt-5 text-gray-700">
+            <div className="flex gap-4 mt-5 justify-center text-gray-700">
               <li className="list-none bg-gray-100 p-2 rounded">
-                <i className="fab fa-facebook-f">
-                  <FaFacebook />
-                </i>
+                <FaFacebook />
               </li>
               <li className="list-none bg-gray-100 p-2 rounded">
-                <i className="fab fa-twitter">
-                  <IoLogoTwitter />
-                </i>
+                <IoLogoTwitter />
               </li>
               <li className="list-none bg-gray-100 p-2 rounded">
-                <i className="fab fa-github">
-                  <FaGithub />
-                </i>
+                <FaGithub />
               </li>
             </div>
           </div>
-          <div className="bg-white px-6 py-4 text-gray-500 rounded shadow ">
+
+          <div className="bg-white px-6 py-4 text-gray-500 rounded shadow">
             <div className="flex gap-4 border-b pb-3">
               <span className="bg-gray-400 p-1 text-white">
                 <VscGraph />
               </span>
-
               <h1 className="font-[600]">Beginner</h1>
             </div>
             <div className="flex gap-4 mt-4">
               <GoClock className="text-[20px]" />
-
               <h1>
                 <span className="text-gray-700">2</span> hrs{" "}
                 <span className="text-gray-700"> 26</span> min
               </h1>
             </div>
           </div>
-          <div className="bg-white px-6 py-2 text-gray-500 rounded shadow ">
+
+          <div className="bg-white px-6 py-2 text-gray-500 rounded shadow">
             <div className="flex gap-4 border-b pb-3">
               <h1 className="text-[21px] text-gray-500 font-[600]">Ratings</h1>
             </div>
             <div className="flex gap-2 mt-4 text-red-600">
               {Array(4)
                 .fill(0)
-                .map((item, index) => (
-                  <span key={index} className="">
+                .map((_, index) => (
+                  <span key={index}>
                     <IoIosStar />
                   </span>
                 ))}
