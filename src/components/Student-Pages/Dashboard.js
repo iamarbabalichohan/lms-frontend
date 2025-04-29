@@ -24,7 +24,7 @@ const Dashboard = () => {
       progress: 25,
       icon: "https://img.icons8.com/color/48/vue-js.png",
       bgColor: "#e0e0e0",
-      barColor: "#3498db",
+      barColor: "#0097B2",
     },
     {
       title: "Angular in Steps",
@@ -67,14 +67,14 @@ const Dashboard = () => {
     <div className="p-6 pb-32 px-4 md:px-10 lg:px-20 xl:px-44 bg-gray-100 w-full overflow-y-auto">
       <DashBoardHeader title="DASHBOARD" subTitle="Dashboard" />
 
-      <div className="flex flex-col md:flex-row justify-between text-[15px] border-l-4 border-l-[#2196F3] text-gray-500 items-center bg-white p-4 shadow-md rounded-md">
+      <div className="flex flex-col md:flex-row justify-between text-[15px] border-l-4 border-l-[#0097B2] text-gray-500 items-center bg-white p-4 shadow-md rounded-md">
         <p className="flex gap-4 items-center mb-2 md:mb-0">
           <PiCalendarBlankThin className="text-[28px] ml-4" />
           <span className="pt-1 text-center md:text-left">
             Your subscription ends on <strong>25 February 2015</strong>
           </span>
         </p>
-        <button className="bg-red-600 hover:bg-red-700 py-2 px-4 text-white rounded">
+        <button className="bg-[#BA0000] hover:bg-[#BA0000] py-2 px-4 text-white rounded">
           Upgrade
         </button>
       </div>
@@ -83,7 +83,7 @@ const Dashboard = () => {
         <div className="bg-white p-4 w-full lg:w-[60%] shadow-md rounded-md">
           <div className="flex justify-between border-b pb-4 mb-4">
             <div className="flex gap-4">
-              <h2 className="text-red-600 text-[32px] font-bold">116</h2>
+              <h2 className="text-[#BA0000] text-[32px] font-bold">116</h2>
               <p className="flex flex-col">
                 <span className="text-[23px] text-gray-600">Angular</span>
                 <span className="text-[12px] text-gray-500">Best Score</span>
@@ -99,7 +99,7 @@ const Dashboard = () => {
         <div className="w-full lg:w-[40%]">
           <div className="bg-white p-4 shadow-md rounded-md">
             <div className="flex gap-4 border-b mb-6 pb-4">
-              <h2 className="text-red-600 text-3xl font-bold">432</h2>
+              <h2 className="text-[#BA0000] text-3xl font-bold">432</h2>
               <div>
                 <p className="text-[23px] text-gray-600">Experience IQ</p>
                 <p className="text-[12px] text-gray-600">4 Days Streak</p>
@@ -113,10 +113,10 @@ const Dashboard = () => {
               Your Latest Achievements
             </p>
             <div className="flex flex-wrap justify-center space-x-2 mt-4 border-t pt-2">
-              <span className="bg-blue-500 rounded-full p-2">
+              <span className="bg-[#0097B2] rounded-full p-2">
                 <FaThumbsUp className="text-white" />
               </span>
-              <span className="bg-red-500 rounded-full p-2">
+              <span className="bg-[#BA0000] rounded-full p-2">
                 <FaStar className="text-white" />
               </span>
               <span className="bg-yellow-500 rounded-full p-2">
@@ -141,7 +141,7 @@ const Dashboard = () => {
               <p className="text-[12px] text-gray-500">YOUR RECENT COURSES</p>
             </div>
             <div className="flex justify-end px-4 py-2">
-              <button className="bg-red-600 hover:bg-red-700 text-[13px] text-white px-4 py-2 rounded">
+              <button className="bg-[#BA0000] hover:bg-red-700 text-[13px] text-white px-4 py-2 rounded">
                 My courses
               </button>
             </div>
@@ -160,7 +160,7 @@ const Dashboard = () => {
                   LATEST FORUM TOPICS & REPLIES
                 </p>
               </div>
-              <button className="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg">
+              <button className="bg-[#BA0000] text-white rounded-full w-8 h-8 flex items-center justify-center text-lg">
                 <BiChevronRight />
               </button>
             </div>

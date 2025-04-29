@@ -13,9 +13,9 @@ const QuizResult = () => {
       case "Correct":
         return "bg-[#66BB6A]";
       case "Wrong":
-        return "bg-red-500";
+        return "bg-[#BA0000]";
       case "Pending Review":
-        return "bg-[#2196F3]";
+        return "bg-[#0097B2]";
       default:
         return "";
     }
@@ -25,7 +25,7 @@ const QuizResult = () => {
     <div className="p-4 pb-32 md:px-44 bg-gray-100 w-full overflow-y-auto">
       <div>
         <div className="text-[11px] space-x-2 py-2">
-          <span className="text-[#2196F3] mr-2">HOME </span>
+          <span className="text-[#0097B2] mr-2">HOME </span>
           {"  /  "} <span className="text-gray-400">QUIZ RESULT</span>
         </div>
         <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -52,7 +52,7 @@ const QuizResult = () => {
               <h1 className="text-[15px] font-bold">5.8</h1>
               <h1 className="text-gray-400">Good</h1>
             </div>
-            <button className="h-12 mt-2 sm:mt-0 px-4 bg-red-600 text-white rounded hover:bg-blue-600">
+            <button className="h-12 mt-2 sm:mt-0 px-4 bg-[#BA0000] text-white rounded hover:bg-[#0097B2]">
               Restart ↻
             </button>
           </div>

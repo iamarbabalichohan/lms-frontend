@@ -9,8 +9,8 @@ const TakeQuiz = () => {
   const statsData = [
     { label: "TOTAL", value: 25, color: "text-gray-800" },
     { label: "CORRECT", value: 3, color: "text-green-600" },
-    { label: "WRONG", value: 5, color: "text-red-500" },
-    { label: "LEFT", value: 17, color: "text-blue-500" },
+    { label: "WRONG", value: 5, color: "text-[#BA0000]" },
+    { label: "LEFT", value: 17, color: "text-[#0097B2]" },
   ];
 
   const questions = [
@@ -25,7 +25,7 @@ const TakeQuiz = () => {
 
   const activeQuestion = 9;
   return (
-    <div className=" w-full fixed bg-gray-50 flex flex-col lg:flex-row md:justify-between">
+    <div className=" w-full fixed sm:pb-32 bg-gray-50 flex flex-col lg:flex-row md:justify-between">
       <div className="p-6 bg-gray-50 lg:ml-40 flex flex-col gap-6 md:w-[65%] w-full">
         <DashBoardHeader title="Quiz" />
         <div className="flex flex-col md:flex-row md:justify-around bg-white rounded shadow w-full max-w-full text-center overflow-auto">
@@ -63,7 +63,7 @@ const TakeQuiz = () => {
             <button className="border border-gray-300 hover:bg-gray-100 px-4 py-2 rounded w-full sm:w-auto">
               Skip
             </button>
-            <button className="bg-red-600 text-white px-6 py-2 rounded shadow hover:bg-red-700 w-full sm:w-auto">
+            <button className="bg-[#BA0000] text-white px-6 py-2 rounded shadow hover:bg-red-700 w-full sm:w-auto">
               Submit &gt;
             </button>
           </div>
@@ -74,9 +74,9 @@ const TakeQuiz = () => {
           <h2 className="text-[15px] mb-2 text-gray-500">TIME LEFT</h2>
           <div className="flex items-center justify-between text-gray-500 text-sm font-semibold">
             <span>
-              <span className="text-lg text-red-600">01</span> hrs{" "}
-              <span className="text-lg text-red-600">43</span> min{" "}
-              <span className="text-lg text-red-600">22</span> sec
+              <span className="text-lg text-[#BA0000]">01</span> hrs{" "}
+              <span className="text-lg text-[#BA0000]">43</span> min{" "}
+              <span className="text-lg text-[#BA0000]">22</span> sec
             </span>
           </div>
         </div>
@@ -89,14 +89,14 @@ const TakeQuiz = () => {
                 key={q.number}
                 className={`flex items-center gap-3 p-3 rounded cursor-pointer ${
                   q.number === activeQuestion
-                    ? "bg-[#2196F3] text-white"
+                    ? "bg-[#0097B2] text-white"
                     : "hover:bg-gray-100"
                 }`}
               >
                 <div
                   className={`rounded-full border w-8 h-8 p-1 flex items-center justify-center ${
                     q.number === activeQuestion
-                      ? "bg-white text-red-600"
+                      ? "bg-white text-[#BA0000]"
                       : "text-gray-700 border-gray-400"
                   }`}
                 >

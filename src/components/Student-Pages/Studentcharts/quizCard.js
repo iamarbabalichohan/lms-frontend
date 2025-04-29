@@ -30,7 +30,7 @@ const QuizResults = () => {
           <h2 className="text-[20px] sm:text-[23px]">Quizzes</h2>
           <p className="text-[12px] text-gray-400">YOUR PERFORMANCE</p>
         </div>
-        <button className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-[13px] w-full sm:w-auto">
+        <button className="bg-[#BA0000] hover:bg-red-700 text-white px-4 py-2 rounded text-[13px] w-full sm:w-auto">
           Quiz results
         </button>
       </div>
@@ -46,7 +46,7 @@ const QuizResults = () => {
             <h3 className="text-gray-800 text-[16px]">{quiz.title}</h3>
             <p className="text-[13px] text-gray-400">
               COURSE{" "}
-              <span className="text-blue-500 underline cursor-pointer">
+              <span className="text-[#0097B2] underline cursor-pointer">
                 {quiz.course}
               </span>
             </p>

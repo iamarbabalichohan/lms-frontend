@@ -39,10 +39,10 @@ const data = {
     {
       label: "Sales",
       data: lineData.map((item) => item.value),
-      borderColor: "#0088FE",
+      borderColor: "#0097B2",
       backgroundColor: "rgba(136, 132, 216, 0.2)",
       borderWidth: 4,
-      pointBackgroundColor: "#8884d8",
+      pointBackgroundColor: "#0097B2",
       pointBorderColor: "#fff",
       pointHoverBackgroundColor: "#fff",
       pointHoverBorderColor: "#8884d8",

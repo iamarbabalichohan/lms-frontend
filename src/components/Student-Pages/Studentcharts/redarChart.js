@@ -1,25 +1,18 @@
 import React from "react";
-import { Radar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
-  RadialLinearScale,
-  PointElement,
-  LineElement,
-  Filler,
+  CategoryScale,
+  LinearScale,
+  BarElement,
   Tooltip,
   Legend,
 } from "chart.js";
+import { Bar } from "react-chartjs-2";
 
-// Register the chart components
-ChartJS.register(
-  RadialLinearScale,
-  PointElement,
-  LineElement,
-  Filler,
-  Tooltip,
-  Legend
-);
+// Register bar chart components
+ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
+// Use radar data but in bar chart layout
 const data = {
   labels: [
     "JavaScript",
@@ -35,13 +28,9 @@ const data = {
     {
       label: "Skill Level",
       data: [90, 85, 70, 75, 60, 65, 80, 88],
-      backgroundColor: "rgba(223, 233, 242, 0.2)",
-      borderColor: "#0088FE",
-      borderWidth: 4,
-      pointBackgroundColor: "#0088FE",
-      pointBorderColor: "#fff",
-      pointHoverBackgroundColor: "#fff",
-      pointHoverBorderColor: "#0088FE",
+      backgroundColor: "#0097B2", // Your preferred accent color
+      borderRadius: 6,
+      barThickness: 18,
     },
   ],
 };
@@ -49,36 +38,36 @@ const data = {
 const options = {
   responsive: true,
   maintainAspectRatio: false,
+  plugins: {
+    legend: { display: true },
+  },
   scales: {
-    r: {
-      suggestedMin: 0,
-      suggestedMax: 100,
-      angleLines: { color: "rgba(0, 0, 0, 0.1)" },
-      grid: { color: "rgba(0, 0, 0, 0.1)" },
-
+    x: {
       ticks: {
-        display: false,
-        stepSize: 40,
-      },
-      pointLabels: {
-        font: {
-          size: 14,
-        },
+        font: { size: 13 },
         color: "#333",
+      },
+      grid: { display: false },
+      categoryPercentage: 0.9,
+      barPercentage: 0.9,
+    },
+    y: {
+      min: 0,
+      max: 100,
+      ticks: { stepSize: 20 },
+      grid: {
+        color: "rgba(0, 0, 0, 0.1)",
       },
     },
   },
-  plugins: {
-    legend: { display: false },
-  },
 };
 
-const RadarChartComponent = () => {
+const BarChartComponent = () => {
   return (
-    <div className="w-full sm:w-[90%] md:w-[70%] mx-auto h-[300px] sm:h-[350px]">
-      <Radar data={data} options={options} />
+    <div className="w-full mt-12 sm:w-[400px] md:w-[400px] mx-auto h-[300px] sm:h-[404px]">
+      <Bar data={data} options={options} />
     </div>
   );
 };
 
-export default RadarChartComponent;
+export default BarChartComponent;

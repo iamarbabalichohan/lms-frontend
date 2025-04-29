@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import DashBoardHeader from "../UI/DashBoardHeader";
 
 const courses = [
@@ -39,9 +40,12 @@ const courses = [
   },
 ];
 
-const CourseCard = ({ course }) => {
+const CourseCard = ({ course, onClick }) => {
   return (
-    <div className="bg-white rounded-md h-[500px] shadow-md w-full">
+    <div
+      className="bg-white rounded-md h-[500px] shadow-md w-full"
+      onClick={onClick}
+    >
       <div className="p-4 text-center mb-6">
         <h2 className="text-[23px] text-gray-600 font-semibold">
           {course.title}
@@ -53,7 +57,12 @@ const CourseCard = ({ course }) => {
         </div>
       </div>
       <div className="bg-gray-900 flex items-center justify-center h-48">
-        <img src={course.image} alt={course.title} className="object-contain" />
+        <iframe
+          src="https://player.vimeo.com/video/77091974"
+          title="Course Video"
+          className="w-full h-48 sm:h-64 md:h-80"
+          allowFullScreen
+        ></iframe>
       </div>
       <div className="p-4 text-sm mt-8">
         <p className="text-gray-400 font-semibold uppercase text-[12px] mb-1">
@@ -69,12 +78,17 @@ const CourseCard = ({ course }) => {
 };
 
 const BrowseCourseDashBoard = () => {
+  const navigate = useNavigate();
   return (
     <div className="p-6 pb-32 px-4 md:px-10 lg:px-20 xl:px-44 bg-gray-100 w-full overflow-y-auto">
       <DashBoardHeader title="COURSES" subTitle="Courses" />
       <div className="bg-gray-100 grid grid-cols-1 md:grid-cols-2 gap-6">
         {courses.map((course, index) => (
-          <CourseCard key={index} course={course} />
+          <CourseCard
+            key={index}
+            course={course}
+            onClick={() => navigate("/takeCourse")}
+          />
         ))}
       </div>
     </div>

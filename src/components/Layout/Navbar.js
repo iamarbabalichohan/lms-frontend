@@ -39,7 +39,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-[#2196F3] flex flex-wrap items-center justify-between px-4 md:px-6 py-3">
+    <nav className="bg-[#0097B2] flex flex-wrap items-center justify-between px-4 md:px-6 py-3">
       <div className="flex items-center space-x-4">
         <button
           className="text-[#8DBCDF] text-3xl"
@@ -48,16 +48,21 @@ const Navbar = () => {
           <IoMenuOutline />
         </button>
         <div className="flex items-center space-x-2">
-          <span className="text-white text-[36px]">
+          {/* <span className="text-white text-[36px]">
             <PiGraduationCapThin />
           </span>
-          <span className="text-white text-[18px] font-[600]">AmicaCare</span>
+          <span className="text-white text-[18px] font-[600]">AmicaCare</span> */}
+          <img
+            alt=""
+            src="assets/amicaa.png"
+            className="sm:w-52 w-32 rounded h-12 sm:h-12"
+          />
         </div>
-        <div className="hidden md:block relative text-[#8DBCDF] mx-4 md:mx-6 w-full md:w-auto">
+        <div className="hidden md:block relative text-[#000] mx-4 md:mx-6 w-full md:w-auto">
           <input
             type="text"
             placeholder="Search"
-            className="w-full px-4 placeholder-[#8DBCDF] py-2 rounded-[2px] bg-[#1A78C2] border-none focus:outline-none"
+            className="w-full px-4 placeholder-[#000] py-2 rounded-[2px] bg-[#fff] border-none focus:outline-none"
           />
           <span className="absolute top-3 right-3">
             <GoSearch />
@@ -65,7 +70,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="flex items-center space-x-4 md:space-x-6 text-[#8DBCDF]">
+      <div className="flex items-center space-x-4 md:space-x-6 text-[#fff]">
         <div className="hidden md:flex space-x-6">
           {navLinks.map((link, index) => (
             <li

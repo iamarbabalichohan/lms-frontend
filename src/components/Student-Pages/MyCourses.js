@@ -1,5 +1,6 @@
 import DashBoardHeader from "../UI/DashBoardHeader";
 import { FaPlayCircle } from "react-icons/fa";
+import { FaStar, FaRegStar } from "react-icons/fa";
 
 const MyCourses = () => {
   const courses = [
@@ -7,36 +8,51 @@ const MyCourses = () => {
       title: "Learn VueJs the easy way!",
       lessons: "3 of 7",
       image: "/assets/coursevuejs.png",
-      progress: 43,
-      status: "in-progress",
+      author: "Shani Raja",
+      role: "Editor, Writing Coach & Lecturer",
+      rating: 3,
+      originalPrice: 200,
+      discountedPrice: 120,
     },
     {
       title: "Gulp and Slush",
       lessons: "5 of 7",
       image: "/assets/coursegulp.png",
-      progress: 71,
-      status: "in-progress",
+      author: "Shani Raja",
+      role: "Editor, Writing Coach & Lecturer",
+      rating: 4,
+      originalPrice: 180,
+      discountedPrice: 100,
     },
     {
       title: "Npm & Gulp Advanced Workflow",
       lessons: "7 of 7",
       image: "/assets/coursegulp.png",
-      progress: 100,
-      status: "completed",
+      author: "Shani Raja",
+      role: "Editor, Writing Coach & Lecturer",
+      rating: 4,
+      originalPrice: 180,
+      discountedPrice: 100,
     },
     {
       title: "VueJs",
-      lessons: "3 of 7",
+      lessons: "5 of 7",
       image: "/assets/coursevuejs.png",
-      progress: 43,
-      status: "in-progress",
+      author: "Shani Raja",
+      role: "Editor, Writing Coach & Lecturer",
+      rating: 4,
+      originalPrice: 180,
+      discountedPrice: 100,
     },
     {
       title: "Github Webhooks for Beginners",
       lessons: "8 of 10",
       image: "/assets/coursegithub.png",
-      progress: 80,
-      status: "in-progress",
+      author: "Shani Raja",
+      role: "Editor, Writing Coach & Lecturer",
+      rating: 4,
+      originalPrice: 180,
+      discountedPrice: 100,
     },
   ];
   return (
@@ -44,49 +60,75 @@ const MyCourses = () => {
       <DashBoardHeader title="MY COURSES" subTitle="My Courses" />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-gray-100">
         {courses.map((course, index) => (
-          <div key={index} className="bg-white rounded shadow  flex flex-col">
-            <div className="flex px-4 pt-2 items-center gap-4">
-              <img
-                src={course.image}
-                alt="Course"
-                className="w-24 h-14 rounded"
-              />
-              <div>
-                <h3 className=" text-gray-500 font-semibold text-[20px]">
-                  {course.title}
-                </h3>
-                <p className="text-[12px] text-gray-500">
-                  Lessons: {course.lessons}
-                </p>
+          <div
+            key={index}
+            className="bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-[1.01]"
+          >
+            {/* Top image with avatars overlay (mocked) */}
+            <div className="relative">
+              <img src={course.image} alt="Course" className="w-full h-40" />
+              <div className="absolute top-2 left-2 flex items-center space-x-[-10px]">
+                <img
+                  src="/assets/avatar1.jpg"
+                  className="w-8 h-8 rounded-full border-2 border-white"
+                  alt="avatar"
+                />
+                <img
+                  src="/assets/avatar2.jpg"
+                  className="w-8 h-8 rounded-full border-2 border-white"
+                  alt="avatar"
+                />
+                <img
+                  src="/assets/avatar3.jpg"
+                  className="w-8 h-8 rounded-full border-2 border-white"
+                  alt="avatar"
+                />
+                <span className="w-8 h-8 rounded-full bg-gray-300 text-sm flex items-center justify-center border-2 border-white text-gray-700 font-semibold">
+                  +3
+                </span>
+              </div>
+              <div className="absolute bottom-2 left-2 text-white text-sm font-semibold shadow-md">
+                <p>{course.lessons} lectures</p>
+                <p>3 hours video</p>
               </div>
             </div>
 
-            {/* Progress Bar */}
-            <div className="mt-4 h-1.5 bg-gray-200 rounded">
-              <div
-                className={`h-full ${
-                  course.status === "completed" ? "bg-red-500" : "bg-[#2196F3]"
-                } `}
-                style={{ width: `${course.progress}%` }}
-              ></div>
-            </div>
+            {/* Course info */}
+            <div className="p-4">
+              <h3 className="text-gray-500 font-bold text-lg leading-tight">
+                {course.title}
+              </h3>
+              <p className="text-sm text-gray-400 mt-1">
+                {course.author}, {course.role}
+              </p>
 
-            {/* Buttons */}
-            <div className="mt-3 px-4 py-2 flex items-center text-[13px] gap-2">
-              {course.status === "completed" ? (
-                <>
-                  <button className="px-2 py-1 bg-red-500 text-white rounded ">
-                    Completed ✓
-                  </button>
-                  <button className="px-2 py-1 border border-gray-300 rounded hover:bg-gray-100">
-                    Restart ↻
-                  </button>
-                </>
-              ) : (
-                <button className="flex gap-2 px-2 py-1 bg-[#2196F3] text-white rounded">
-                  Continue <FaPlayCircle className="mt-1" />
-                </button>
-              )}
+              {/* Rating */}
+              <div className="flex items-center mt-3 text-[#BA0000] text-sm">
+                {Array.from({ length: 5 }).map((_, i) =>
+                  i < course.rating ? (
+                    <FaStar key={i} className="mr-1" />
+                  ) : (
+                    <FaRegStar key={i} className="mr-1" />
+                  )
+                )}
+              </div>
+
+              {/* Price */}
+              {/* <div className="flex justify-between items-center mt-3">
+                <div>
+                  <span className="line-through text-gray-400 text-sm">
+                    ${course.originalPrice}
+                  </span>
+                  <span className="text-[#0097B2] font-bold text-lg ml-2">
+                    ${course.discountedPrice}
+                  </span>
+                </div>
+              </div> */}
+
+              {/* Continue Button */}
+              <button className="mt-4 w-full flex items-center justify-center gap-2 bg-[#0097B2] hover:bg-[#BA0000] text-white py-2 rounded transition duration-300">
+                Continue <FaPlayCircle />
+              </button>
             </div>
           </div>
         ))}

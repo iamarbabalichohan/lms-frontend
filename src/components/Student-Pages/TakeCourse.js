@@ -31,26 +31,26 @@ const TakeCourse = () => {
       lessonNo: 4,
       lessonName: "Database Access",
       lessonTime: (
-        <span className="bg-[#2196F3] text-white p-1 rounded">PRO</span>
+        <span className="bg-[#0097B2] text-white p-1 rounded">PRO</span>
       ),
     },
     {
       lessonNo: 5,
       lessonName: "Eloquent Basics",
       lessonTime: (
-        <span className="bg-[#2196F3] text-white p-1 rounded">PRO</span>
+        <span className="bg-[#0097B2] text-white p-1 rounded">PRO</span>
       ),
     },
     {
       lessonNo: 6,
       lessonName: "Take Quiz",
       lessonTime: (
-        <span className="bg-[#2196F3] text-white p-1 rounded">PRO</span>
+        <span className="bg-[#0097B2] text-white p-1 rounded">PRO</span>
       ),
     },
   ];
   return (
-    <div className="p-4 sm:p-6 pb-32 sm:px-44 bg-gray-100 w-full overflow-y-auto">
+    <div className="p-4 sm:pb-32 sm:px-44 bg-gray-100 w-full overflow-y-auto">
       <nav className="text-[11px] text-gray-400 mb-4">
         <DashBoardHeader
           title="COURSES"
@@ -83,11 +83,11 @@ const TakeCourse = () => {
                 let customClass = "text-gray-400";
 
                 if (item.lessonNo === 1 || item.lessonNo === 3) {
-                  customClass = "text-[#2196F3]";
+                  customClass = "text-[#0097B2]";
                 } else if (
                   item.lessonName === "The MVC architectural pattern"
                 ) {
-                  customClass = "text-white bg-[#2196F3]";
+                  customClass = "text-white bg-[#0097B2]";
                 }
 
                 return (
@@ -109,7 +109,7 @@ const TakeCourse = () => {
 
         <div className="w-full lg:w-72 flex flex-col gap-5">
           <div className="bg-white px-6 py-4 rounded shadow text-center">
-            <button className="bg-red-500 items-center flex flex-col text-white py-2 px-4 rounded w-full mb- text-sm">
+            <button className="bg-[#BA0000] items-center flex flex-col text-white py-2 px-4 rounded w-full mb- text-sm">
               <MdFileDownload className="text-[23px] my-1" />
               <span className="font-semibold">Download Files</span>
             </button>
@@ -173,7 +173,7 @@ const TakeCourse = () => {
             <div className="flex gap-4 border-b pb-1 items-center">
               <h1 className="text-[21px] text-gray-500 font-[600]">Ratings</h1>
             </div>
-            <div className="flex gap-2 mt-4 text-red-600 justify-center sm:justify-start">
+            <div className="flex gap-2 mt-4 text-[#BA0000] justify-center sm:justify-start">
               {Array(4)
                 .fill(0)
                 .map((item, index) => (

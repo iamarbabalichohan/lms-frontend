@@ -29,26 +29,26 @@ const CoursePage = () => {
       lessonNo: 4,
       lessonName: "Database Access",
       lessonTime: (
-        <span className="bg-[#2196F3] text-white p-1 rounded">PRO</span>
+        <span className="bg-[#0097B2] text-white p-1 rounded">PRO</span>
       ),
     },
     {
       lessonNo: 5,
       lessonName: "Eloquent Basics",
       lessonTime: (
-        <span className="bg-[#2196F3] text-white p-1 rounded">PRO</span>
+        <span className="bg-[#0097B2] text-white p-1 rounded">PRO</span>
       ),
     },
     {
       lessonNo: 6,
       lessonName: "Take Quiz",
       lessonTime: (
-        <span className="bg-[#2196F3] text-white p-1 rounded">PRO</span>
+        <span className="bg-[#0097B2] text-white p-1 rounded">PRO</span>
       ),
     },
   ];
   return (
-    <div className="p-4 sm:p-6 pb-32 sm:px-12 md:px-20 lg:px-44 bg-gray-100 w-full overflow-y-auto">
+    <div className="p-4 sm:pb-32 sm:px-12 md:px-20 lg:px-44 bg-gray-100 w-full overflow-y-auto">
       <nav className="text-[11px] text-gray-400 mb-4">
         <DashBoardHeader
           title="COURSES"
@@ -81,11 +81,11 @@ const CoursePage = () => {
                 let customClass = "text-gray-400";
 
                 if (item.lessonNo === 1 || item.lessonNo === 3) {
-                  customClass = "text-[#2196F3]";
+                  customClass = "text-[#0097B2]";
                 } else if (
                   item.lessonName === "The MVC architectural pattern"
                 ) {
-                  customClass = "text-white bg-[#2196F3]";
+                  customClass = "text-white bg-[#0097B2]";
                 }
 
                 return (
@@ -107,7 +107,7 @@ const CoursePage = () => {
 
         <div className="w-full lg:w-72 flex flex-col gap-5">
           <div className="bg-white px-6 py-4 rounded shadow text-center">
-            <button className="bg-red-500 text-white py-2 px-4 rounded w-full mb-4 text-sm">
+            <button className="bg-[#BA0000] text-white py-2 px-4 rounded w-full mb-4 text-sm">
               Get All Courses <br />
               <span className="font-semibold">$9 / month</span>
             </button>
@@ -175,7 +175,7 @@ const CoursePage = () => {
             <div className="flex gap-4 border-b pb-3">
               <h1 className="text-[21px] text-gray-500 font-[600]">Ratings</h1>
             </div>
-            <div className="flex gap-2 mt-4 text-red-600">
+            <div className="flex gap-2 mt-4 text-[#BA0000]">
               {Array(4)
                 .fill(0)
                 .map((_, index) => (
