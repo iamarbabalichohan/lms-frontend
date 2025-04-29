@@ -9,23 +9,24 @@ const LoginComponent = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (email === "ehsan123@gmail.com" && password === "Ehsan123") {
+    if (email === "skybridge@gmail.com" && password === "Skybridge123") {
       navigate("/Student-Dashboard");
     } else {
       alert("enter a valid email and password");
     }
     console.log({ email, password });
   };
+
   return (
-    <div className="flex flex-col items-center justify-center w-full overflow-y-auto bg-gray-100">
+    <div className=" flex flex-col items-center justify-center w-full min-h-screen overflow-y-auto bg-gray-100 px-4">
       <div className="mb-10 flex flex-col items-center mt-20">
-        <img alt="" src="/assets/primary.svg" className="w-16 " />
+        <img alt="" src="/assets/primary.svg" className="w-16" />
         <h1 className="text-[26px] font-[600] tracking-[1px] pt-2 text-gray-500">
           AmicaCare
         </h1>
       </div>
 
-      <div className="bg-white shadow-md rounded-md w-[480px]  px-8 pt-8 mb-10">
+      <div className="bg-white shadow-md rounded-md w-full max-w-[480px] mx-4 px-6 pt-8 mb-10">
         <h2 className="text-[23px] text-center text-gray-500">Login</h2>
         <p className="text-[11px] text-center border-b pb-4 text-gray-400 mb-6">
           ACCESS YOUR ACCOUNT
@@ -83,7 +84,7 @@ const LoginComponent = () => {
 
           <button
             type="submit"
-            className="w-full bg-[#0097B2] text-white py-2 my-2 rounded-md font-medium hover:bg-[#0097B2]"
+            className="w-full bg-[#0097B2] text-white py-2 my-2 rounded-md font-medium hover:bg-[#007c94]"
           >
             Login
           </button>
@@ -105,4 +106,5 @@ const LoginComponent = () => {
     </div>
   );
 };
+
 export default LoginComponent;

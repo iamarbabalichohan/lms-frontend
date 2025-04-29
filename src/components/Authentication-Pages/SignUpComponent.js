@@ -23,24 +23,17 @@ const SignUpComponent = () => {
     // handle form submission logic
     console.log(formData);
   };
+
   return (
-    <div
-      className="flex flex-col  items-center justify-center w-full overflow-auto"
-      style={{
-        backgroundImage:
-          'url("https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <div className="mb-10 flex flex-col items-center mt-60">
-        <img alt="" src="/assets/primary.svg" className="w-16 " />
-        <h1 className="text-[26px] font-[600] tracking-[1px] pt-2 text-white">
+    <div className="flex flex-col items-center justify-center w-full min-h-screen overflow-auto px-4">
+      <div className="mb-10 flex flex-col items-center mt-40">
+        <img alt="" src="/assets/primary.svg" className="w-16" />
+        <h1 className="text-[26px] font-[600] tracking-[1px] pt-2 text-gray-500">
           AmicaCare
         </h1>
       </div>
 
-      <div className="bg-white shadow-lg rounded-md w-[480px] p-6 mb-6">
+      <div className="bg-white shadow-lg rounded-md w-full max-w-[480px] p-6 mb-6">
         <h2 className="text-[23px] text-gray-500 font-[500] text-center">
           Sign Up
         </h2>
@@ -134,7 +127,7 @@ const SignUpComponent = () => {
 
           <button
             type="submit"
-            className="w-full bg-[#0097B2] text-[15px] text-white py-2 rounded font-medium hover:bg-[#0097B2]"
+            className="w-full bg-[#0097B2] text-[15px] text-white py-2 rounded font-medium hover:bg-[#007c94]"
           >
             Sign Up
           </button>
@@ -149,7 +142,7 @@ const SignUpComponent = () => {
             />
             <label className="text-[15px] text-gray-400">
               I agree to the{" "}
-              <a href="#" className=" underline">
+              <a href="#" className="underline">
                 Terms of Use
               </a>
             </label>
@@ -158,7 +151,7 @@ const SignUpComponent = () => {
 
         <p className="text-center text-[15px] mt-4 text-gray-500">
           Already signed up?{" "}
-          <a href="/" className="text-[#0097B2]  underline">
+          <a href="/" className="text-[#0097B2] underline">
             Login
           </a>
         </p>
@@ -166,4 +159,5 @@ const SignUpComponent = () => {
     </div>
   );
 };
+
 export default SignUpComponent;
