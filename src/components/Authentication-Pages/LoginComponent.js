@@ -18,7 +18,7 @@ export default function AuthPage() {
     <div className="flex items-center w-full justify-center py-8 md:min-h-screen bg-gray-100 px-4">
       <div className="relative w-full max-w-[1400px]  md:h-[650px] perspective rounded">
         <div
-          className={`w-full  duration-700 transition-transform relative`}
+          className={`w-full md:h-full duration-700 transition-transform relative`}
           style={{
             transformStyle: "preserve-3d",
             transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
@@ -26,7 +26,7 @@ export default function AuthPage() {
         >
           {/* Front Side - Login */}
           <div
-            className="absolute w-full  flex flex-col md:flex-row rounded shadow-xl bg-white"
+            className="absolute w-full md:h-full flex flex-col md:flex-row rounded shadow-xl bg-white"
             style={{ backfaceVisibility: "hidden" }}
           >
             {/* Left - Image */}
@@ -128,7 +128,7 @@ export default function AuthPage() {
 
           {/* Back Side - Signup */}
           <div
-            className="absolute w-full h-full flex flex-col md:flex-row rounded shadow-xl bg-white"
+            className="absolute w-full md:h-full flex flex-col md:flex-row rounded shadow-xl bg-white"
             style={{
               backfaceVisibility: "hidden",
               transform: "rotateY(180deg)",
