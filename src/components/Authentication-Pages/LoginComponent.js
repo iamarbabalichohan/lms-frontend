@@ -16,9 +16,9 @@ export default function AuthPage() {
 
   return (
     <div className="flex items-center w-full justify-center py-8 md:min-h-screen bg-gray-100 px-4">
-      <div className="relative w-full max-w-[1400px] h-auto md:h-[650px] perspective rounded">
+      <div className="relative w-full max-w-[1400px]  md:h-[650px] perspective rounded">
         <div
-          className={`w-full h-full duration-700 transition-transform relative`}
+          className={`w-full  duration-700 transition-transform relative`}
           style={{
             transformStyle: "preserve-3d",
             transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
@@ -26,7 +26,7 @@ export default function AuthPage() {
         >
           {/* Front Side - Login */}
           <div
-            className="absolute w-full h-full flex flex-col md:flex-row rounded shadow-xl bg-white"
+            className="absolute w-full  flex flex-col md:flex-row rounded shadow-xl bg-white"
             style={{ backfaceVisibility: "hidden" }}
           >
             {/* Left - Image */}
@@ -35,9 +35,9 @@ export default function AuthPage() {
                 <img
                   src="https://png.pngtree.com/png-vector/20250218/ourmid/pngtree-two-people-working-on-laptops-at-a-table-business-or-teamwork-png-image_15513101.png"
                   alt="Distance Learning"
-                  className="mx-auto mb-8 w-56 md:w-80"
+                  className="mx-auto mb-8 w-44 md:w-80"
                 />
-                <h2 className="text-2xl font-semibold text-[#fff] mb-2">
+                <h2 className="sm:text-2xl text-xl font-semibold text-[#fff] mb-2">
                   AmicaCare Learning Programs
                 </h2>
                 <p className="text-[#fff]">
