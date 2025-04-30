@@ -22,12 +22,12 @@ const StudentLinks = ({ activeUserType, active, handleToggleNext }) => {
     { name: "Take a Quiz", icon: <FaQuestionCircle /> },
     { name: "Quiz Results", icon: <FaChartBar /> },
     { name: "My Courses", icon: <FaGraduationCap /> },
-    {
-      name: "Community",
-      icon: <FaUsers />,
-      badge: <MdKeyboardArrowRight className="" />,
-    },
-    { name: "Get Help", icon: <FaUsers /> },
+    // {
+    //   name: "Community",
+    //   icon: <FaUsers />,
+    //   badge: <MdKeyboardArrowRight className="" />,
+    // },
+    // { name: "Get Help", icon: <FaUsers /> },
   ];
 
   const [showCommunity, setShowCommunity] = useState(false);
@@ -51,7 +51,7 @@ const StudentLinks = ({ activeUserType, active, handleToggleNext }) => {
                 className={`flex items-center justify-between space-x-2 p-2 rounded cursor-pointer ${
                   active === link.name ||
                   (link.name === "Community" && showCommunity)
-                    ? "bg-[#BA0000] text-white"
+                    ? "font-bold text-[#BA0000]"
                     : "hover:bg-[#BA0000] hover:text-white"
                 }`}
                 onClick={() => handleClick(link)}
@@ -66,9 +66,9 @@ const StudentLinks = ({ activeUserType, active, handleToggleNext }) => {
                   </span>
                 )}
               </div>
-              {link.name === "Community" && (
+              {/* {link.name === "Community" && (
                 <CommunityList show={showCommunity} />
-              )}
+              )} */}
             </div>
           ))}
         </div>

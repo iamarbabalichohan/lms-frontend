@@ -43,8 +43,8 @@ const Account = () => {
   };
 
   return (
-    <div className="mt-6 px-4 sm:px-6 md:px-0">
-      <h2 className="text-[#000] text-xs uppercase mb-2">Account</h2>
+    <div className="mt-6 px-4 text-[12px] sm:px-6 md:px-0">
+      <h2 className="text-[#000] uppercase mb-2">Account</h2>
       {accountLinks.map((link) => {
         const isOpen = openScroll[link.name];
         const dropdownItems =
@@ -63,11 +63,11 @@ const Account = () => {
               }`}
               onClick={() => handleScroll(link)}
             >
-              <div className="flex items-center space-x-2 text-sm sm:text-base">
-                <span className="text-lg">{link.icon}</span>
+              <div className="flex items-center space-x-2 sm:">
+                <span className="">{link.icon}</span>
                 <span>{link.name}</span>
               </div>
-              <span className="text-xl">
+              <span className="">
                 {isOpen ? (
                   <MdOutlineKeyboardArrowDown />
                 ) : (
@@ -81,7 +81,7 @@ const Account = () => {
                 isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
               }`}
             >
-              <ul className="text-sm mb-2 pl-2 sm:pl-4 pt-2">
+              {/* <ul className="text-sm mb-2 pl-2 sm:pl-4 pt-2">
                 {dropdownItems.map((item, index) => (
                   <li
                     key={index}
@@ -98,7 +98,7 @@ const Account = () => {
                     {item}
                   </li>
                 ))}
-              </ul>
+              </ul> */}
             </div>
           </div>
         );

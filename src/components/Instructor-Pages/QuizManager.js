@@ -28,7 +28,7 @@ const QuizManager = () => {
   };
 
   return (
-    <div className="p-4 sm:p-6 sm:px-44 pb-32 bg-gray-100 w-full overflow-y-auto">
+    <div className="p-4 sm:p-6 sm:px-44 pb-32 sm:pb-32 bg-gray-100 w-full overflow-y-auto">
       <div className="flex flex-col sm:flex-row justify-between gap-4 sm:gap-0">
         <DashBoardHeader title="QUIZZES" subTitle="Quizzes" />
         <div className="flex flex-col sm:flex-row gap-2 sm:pt-14 text-[14px]">
@@ -73,7 +73,7 @@ const QuizManager = () => {
                 </button>
                 <button
                   onClick={() => handleClick()}
-                  className="px-3 py-1 border rounded bg-gray-200 hover:bg-gray-300 text-[13px]"
+                  className="px-3 py-1 border rounded bg-[#BA0000] text-[#fff]  text-[13px]"
                 >
                   Edit
                 </button>

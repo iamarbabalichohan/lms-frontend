@@ -1,8 +1,16 @@
+import { useNavigate } from "react-router-dom";
+
 const DashBoardHeader = ({ title, subTitle, statement }) => {
+  const navigate = useNavigate();
   return (
     <div>
       <div className="text-[11px] space-x-2 py-2">
-        <span className="text-[#0097B2] mr-2">HOME </span>
+        <span
+          className="text-[#0097B2] mr-2"
+          onClick={() => navigate("/Student-Dashboard")}
+        >
+          HOME{" "}
+        </span>
         {"  /  "} <span className="text-gray-400">{title}</span>
         {"  /  "} <span className="text-gray-400">{statement}</span>
       </div>

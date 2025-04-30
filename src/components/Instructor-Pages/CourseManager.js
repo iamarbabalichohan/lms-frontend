@@ -64,7 +64,7 @@ const CourseCard = ({ course }) => {
       </div>
       <div>
         <div>
-          <h3 className="text-[23px] text-gray-600 font-semibold">
+          <h3 className="text-[23px] h-16 text-gray-600 font-semibold">
             {course.title}
           </h3>
           <p className="text-gray-500 text-[15px]">{course.description}</p>
@@ -81,7 +81,7 @@ const CourseCard = ({ course }) => {
           </div>
           <div className="text-right mt-2">
             <button
-              className="text-[13px] text-gray-600 border border-gray-300 px-4 py-1 rounded hover:bg-gray-100"
+              className="text-[13px] bg-[#BA0000] text-[#fff] border border-gray-300 px-4 py-1 rounded"
               onClick={() => navigate("/Courses-EditCourse")}
             >
               Edit

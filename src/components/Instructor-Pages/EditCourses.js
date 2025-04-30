@@ -1,6 +1,12 @@
 import DashBoardHeader from "../UI/DashBoardHeader";
 import { IoMenu } from "react-icons/io5";
 import { MdEdit } from "react-icons/md";
+import { CgProfile } from "react-icons/cg";
+import { FaStar } from "react-icons/fa";
+import { IoBagCheck } from "react-icons/io5";
+import { MdOutlineOndemandVideo } from "react-icons/md";
+import { HiMiniCurrencyDollar } from "react-icons/hi2";
+
 import { useNavigate } from "react-router-dom";
 
 const lessons = [
@@ -23,6 +29,13 @@ const lessons = [
     link: "https://learnplus.demo.frontendmatter.com/instructor-lesson-add.html",
   },
 ];
+const iconData = [
+  { icon: <CgProfile />, bg: "#0097B2" },
+  { icon: <FaStar />, bg: "#BA0000" },
+  { icon: <MdOutlineOndemandVideo />, bg: "#22c55e" }, // green-500
+  { icon: <HiMiniCurrencyDollar />, bg: "#facc15" }, // yellow-500
+  { icon: <IoBagCheck />, bg: "#f97316" }, // orange-500
+];
 
 const EditCourse = () => {
   const navigate = useNavigate();
@@ -35,7 +48,7 @@ const EditCourse = () => {
           subTitle="Edit Course"
         />
         <div className="flex gap-2 text-[14px]  ">
-          <button className="py-2 h-10 sm:mt-12 px-4 bg-red-500 rounded text-white ">
+          <button className="py-2 h-10 sm:mt-12 px-4 bg-[#BA0000] rounded text-white ">
             Save
           </button>
         </div>
@@ -74,7 +87,7 @@ const EditCourse = () => {
             <iframe
               className="w-full rounded"
               height="200"
-              src="https://player.vimeo.com/video/"
+              src="https://player.vimeo.com/video/77091974"
               title="Course Preview"
               allowFullScreen
             ></iframe>
@@ -91,7 +104,7 @@ const EditCourse = () => {
             </h2>
             <button
               onClick={() => navigate("/Course-EditLesson")}
-              className="mb-4 px-4 py-2 bg-[#2196F3] text-white rounded hover:bg-[#2196F4]"
+              className="mb-4 px-4 py-2 bg-[#0097B2] text-white rounded hover:bg-[#0097B2]"
             >
               Add Lesson +
             </button>
@@ -182,12 +195,16 @@ const EditCourse = () => {
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Completion Badge
               </label>
-              <div className="flex space-x-2">
-                <span className="w-6 h-6 rounded-full bg-blue-500"></span>
-                <span className="w-6 h-6 rounded-full bg-red-500"></span>
-                <span className="w-6 h-6 rounded-full bg-green-500"></span>
-                <span className="w-6 h-6 rounded-full bg-yellow-500"></span>
-                <span className="w-6 h-6 rounded-full bg-orange-500"></span>
+              <div className="flex space-x-2 text-[13px] text-white">
+                {iconData.map((item, index) => (
+                  <span
+                    key={index}
+                    className="w-6 h-6 rounded-full flex items-center justify-center"
+                    style={{ backgroundColor: item.bg }}
+                  >
+                    {item.icon}
+                  </span>
+                ))}
               </div>
             </div>
           </div>

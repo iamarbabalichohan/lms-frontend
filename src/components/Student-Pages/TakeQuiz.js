@@ -25,7 +25,7 @@ const TakeQuiz = () => {
 
   const activeQuestion = 9;
   return (
-    <div className=" w-full fixed sm:pb-32 bg-gray-50 flex flex-col lg:flex-row md:justify-between">
+    <div className=" w-full sm:pb-32 bg-gray-50 flex flex-col lg:flex-row md:justify-between">
       <div className="p-6 bg-gray-50 lg:ml-40 flex flex-col gap-6 md:w-[65%] w-full">
         <DashBoardHeader title="Quiz" />
         <div className="flex flex-col md:flex-row md:justify-around bg-white rounded shadow w-full max-w-full text-center overflow-auto">

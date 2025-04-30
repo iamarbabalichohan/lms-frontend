@@ -26,7 +26,7 @@ import EditQuizComponent from "./components/Instructor-Pages/EditQuiz";
 import EditCourse from "./components/Instructor-Pages/EditCourses";
 import EditLesson from "./components/Instructor-Pages/EditLesson";
 import QuizPreviewComponent from "./components/Instructor-Pages/QuizPreview";
-
+import { useSelector } from "react-redux";
 import ForumComponent from "./components/Community-Pages/ForumComponent";
 import DiscussionComponent from "./components/Community-Pages/DiscussionComponent";
 import AskQuestionComponent from "./components/Community-Pages/AskQuestion";
@@ -36,95 +36,82 @@ import LoginComponent from "./components/Authentication-Pages/LoginComponent";
 
 function AppLayout() {
   const location = useLocation();
+  const isSidebarOpen = useSelector((state) => state.sidebar.isOpen);
   const noLayoutRoutes = ["/", "/signup"];
   const hideLayout = noLayoutRoutes.includes(location.pathname);
 
   return (
     <div className="font-GoogleSans h-screen overflow-hidden">
       {!hideLayout && <Navbar />}
-      <div className="flex h-screen bg-gray-100">
-        {!hideLayout && <Sidebar className="p-4" />}
-        <Routes>
-          {/* Student Pages */}
-          <Route
-            path="/Student-Dashboard"
-            element={<Dashboard className="p-6" />}
-          />
-          <Route
-            path="/browseCourse"
-            element={<BrowseCourseDashBoard className="p-6" />}
-          />
-          <Route path="/viewCourse" element={<CoursePage className="p-6" />} />
-          <Route path="/takeCourse" element={<TakeCourse className="p-6" />} />
-          <Route path="/takeQuiz" element={<TakeQuiz className="p-6" />} />
-          <Route path="/quizresult" element={<QuizResult className="p-6" />} />
-          <Route path="/mycourses" element={<MyCourses className="p-6" />} />
-          <Route path="/helpcenter" element={<HelpCenter className="p-6" />} />
 
-          {/* Instructor Pages */}
-          <Route
-            path="/instructor"
-            element={<InstructorDashboard className="p-6" />}
-          />
-          <Route
-            path="/instructor-courseManager"
-            element={<CourseManger className="p-6" />}
-          />
-          <Route
-            path="/instructor-quiz-manager"
-            element={<QuizManager className="p-6" />}
-          />
-          <Route
-            path="/instructor-Earnings"
-            element={<EarningComponent className="p-6" />}
-          />
-          <Route
-            path="/instructor-Statement"
-            element={<StatementComponent className="p-6" />}
-          />
-          <Route
-            path="/Instructor-Invoice"
-            element={<InstructorInvoice className="p-6" />}
-          />
-          <Route
-            path="/Edit-Invoice"
-            element={<EditInvoiceComponent className="p-6" />}
-          />
-          <Route
-            path="/EditQuiz"
-            element={<EditQuizComponent className="p-6" />}
-          />
-          <Route
-            path="/Courses-EditCourse"
-            element={<EditCourse className="p-6" />}
-          />
-          <Route
-            path="/Course-EditLesson"
-            element={<EditLesson className="p-6" />}
-          />
-          <Route
-            path="/Quiz-Preview"
-            element={<QuizPreviewComponent className="p-6" />}
-          />
+      <div className="flex h-screen">
+        {/* Sidebar */}
+        {!hideLayout && (
+          <div
+            className={`transition-all duration-300 ${
+              isSidebarOpen ? "w-[250px]" : "w-0"
+            }`}
+          >
+            <Sidebar />
+          </div>
+        )}
 
-          {/* Community Pages */}
-          <Route
-            path="/Community-Forum"
-            element={<ForumComponent className="p-6" />}
-          />
-          <Route
-            path="/Community-Discussion"
-            element={<DiscussionComponent className="p-6" />}
-          />
-          <Route
-            path="/Community-Ask Question"
-            element={<AskQuestionComponent className="p-6" />}
-          />
+        {/* Main Content Area */}
+        <div
+          className={`transition-all duration-300 overflow-y-auto ${
+            !hideLayout
+              ? isSidebarOpen
+                ? "w-[calc(100%-250px)]"
+                : "w-full"
+              : "w-full"
+          }`}
+        >
+          <Routes>
+            {/* Student Pages */}
+            <Route path="/Student-Dashboard" element={<Dashboard />} />
+            <Route path="/browseCourse" element={<BrowseCourseDashBoard />} />
+            <Route path="/viewCourse" element={<CoursePage />} />
+            <Route path="/takeCourse" element={<TakeCourse />} />
+            <Route path="/takeQuiz" element={<TakeQuiz />} />
+            <Route path="/quizresult" element={<QuizResult />} />
+            <Route path="/mycourses" element={<MyCourses />} />
+            <Route path="/helpcenter" element={<HelpCenter />} />
 
-          {/* Auth Pages */}
-          <Route path="/signup" element={<SignUpComponent className="p-6" />} />
-          <Route path="/" element={<LoginComponent className="p-6" />} />
-        </Routes>
+            {/* Instructor Pages */}
+            <Route path="/instructor" element={<InstructorDashboard />} />
+            <Route
+              path="/instructor-courseManager"
+              element={<CourseManger />}
+            />
+            <Route path="/instructor-quiz-manager" element={<QuizManager />} />
+            <Route path="/instructor-Earnings" element={<EarningComponent />} />
+            <Route
+              path="/instructor-Statement"
+              element={<StatementComponent />}
+            />
+            <Route path="/Instructor-Invoice" element={<InstructorInvoice />} />
+            <Route path="/Edit-Invoice" element={<EditInvoiceComponent />} />
+            <Route path="/EditQuiz" element={<EditQuizComponent />} />
+            <Route path="/Courses-EditCourse" element={<EditCourse />} />
+            <Route path="/Course-EditLesson" element={<EditLesson />} />
+            <Route path="/Quiz-Preview" element={<QuizPreviewComponent />} />
+
+            {/* Community Pages */}
+            <Route path="/Community-Forum" element={<ForumComponent />} />
+            <Route
+              path="/Community-Discussion"
+              element={<DiscussionComponent />}
+            />
+            <Route
+              path="/Community-Ask Question"
+              element={<AskQuestionComponent />}
+            />
+
+            {/* Auth Pages */}
+            <Route path="/signup" element={<SignUpComponent />} />
+            <Route path="/" element={<LoginComponent />} />
+          </Routes>
+        </div>
       </div>
     </div>
   );

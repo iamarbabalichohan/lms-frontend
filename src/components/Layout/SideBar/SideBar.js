@@ -106,9 +106,9 @@ const Sidebar = () => {
       // case "Help Center":
       //   navigate("/helpcenter");
       //   break;
-      case "Course Manager":
-        navigate("/instructor-courseManager");
-        break;
+      // case "Course Manager":
+      //   navigate("/instructor-courseManager");
+      //   break;
       case "Quiz Manager":
         navigate("/instructor-quiz-manager");
         break;
@@ -131,33 +131,30 @@ const Sidebar = () => {
 
   return (
     <div
-      className={`bg-gray-50 pb-16 border text-[#000] md:w-[350px] w-full p-1 transition-transform duration-500 ease-in-out z-50 md:static fixed h-full top-0 left-0 ${
+      className={`bg-gray-50 pb-16 text-[12px] border text-[#000] md:w-[280px] w-full p-1 transition-transform duration-500 ease-in-out z-50 md:static fixed h-full top-0 left-0 ${
         isSidebarOpen ? "translate-x-0" : "-translate-x-full"
       }`}
     >
       <div className="overflow-y-auto py-8 p-4 bg-gray-50 h-full">
         <div>
-          <h2 className=" text-xs uppercase mb-2">Applications</h2>
+          <h2 className=" text-[12px] uppercase mb-2">Applications</h2>
           {applicationLinks.map((link) => (
             <div
               key={link.name}
               className={`flex items-center space-x-2 p-2 rounded cursor-pointer ${
                 active === link.name
-                  ? "bg-[#BA0000] text-white"
+                  ? "bg- font-bold text-[#BA0000]"
                   : "hover:bg-[#BA0000] hover:text-white"
               }`}
               onClick={() => handleToggleNext(link)}
             >
               <div className="flex items-center space-x-2">
-                <span className="text-lg">{link.icon}</span>
+                <span className="">{link.icon}</span>
                 <span>{link.name}</span>
               </div>
             </div>
           ))}
         </div>
-
-        <Account active={active} />
-
         <StudentLinks
           activeUserType={activeUserType}
           active={active}
@@ -168,6 +165,8 @@ const Sidebar = () => {
           active={active}
           handleToggleNext={handleToggleNext}
         />
+
+        {/* <Account active={active} /> */}
 
         {/* <div className="mt-6">
           <h2 className="text-white text-xs uppercase mb-2">Components</h2>
@@ -190,19 +189,19 @@ const Sidebar = () => {
         </div> */}
 
         <div className="mt-6">
-          <h2 className="text-[#000] text-xs uppercase mb-2">Settings</h2>
+          <h2 className="text-[#000] uppercase mb-2">Settings</h2>
           {layoutLinks.map((link) => (
             <div
               key={link.name}
               className={`flex items-center space-x-2 p-2 rounded cursor-pointer ${
                 active === link.name
-                  ? "bg-[#BA0000] text-white"
+                  ? "font-bold text-[#BA0000]"
                   : "hover:bg-[#BA0000] hover:text-white"
               }`}
               onClick={() => handleToggleNext(link)}
             >
               <div className="flex items-center space-x-2">
-                <span className="text-lg">{link.icon}</span>
+                <span className="">{link.icon}</span>
                 <span>{link.name}</span>
               </div>
             </div>

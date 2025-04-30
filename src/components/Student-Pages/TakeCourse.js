@@ -50,7 +50,7 @@ const TakeCourse = () => {
     },
   ];
   return (
-    <div className="p-4 sm:pb-32 sm:px-44 bg-gray-100 w-full overflow-y-auto">
+    <div className="p-4 sm:pb-32 pb-32 sm:px-44 bg-gray-100 w-full overflow-y-auto">
       <nav className="text-[11px] text-gray-400 mb-4">
         <DashBoardHeader
           title="COURSES"

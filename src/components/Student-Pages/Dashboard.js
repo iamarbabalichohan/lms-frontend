@@ -71,7 +71,7 @@ const Dashboard = () => {
         <p className="flex gap-4 items-center mb-2 md:mb-0">
           <PiCalendarBlankThin className="text-[28px] ml-4" />
           <span className="pt-1 text-center md:text-left">
-            Your subscription ends on <strong>25 February 2015</strong>
+            Your subscription ends on <strong>25 February 2025</strong>
           </span>
         </p>
         <button className="bg-[#BA0000] hover:bg-[#BA0000] py-2 px-4 text-white rounded">

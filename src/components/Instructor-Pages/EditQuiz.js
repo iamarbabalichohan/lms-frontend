@@ -145,7 +145,7 @@ const EditQuizComponent = () => {
                     />
                     <label
                       htmlFor="cmn-toggle"
-                      className="block h-full w-full rounded-full bg-gray-300 peer-checked:bg-blue-500 cursor-pointer transition duration-300 relative"
+                      className="block h-full w-full rounded-full bg-gray-300 peer-checked:bg-[#0097B2] cursor-pointer transition duration-300 relative"
                     >
                       <span className="absolute left-0.5 top-0.5 h-5 w-5 bg-white rounded-full transition-transform duration-300 peer-checked:translate-x-6"></span>
                     </label>
@@ -177,7 +177,7 @@ const EditQuizComponent = () => {
               <div className="w-full sm:w-3/4 sm:ml-auto px-2.5">
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center text-white text-[0.9375rem] font-normal bg-red-500 border border-red-500 hover:bg-red-600 transition duration-150 ease-in-out shadow-sm px-4 py-2 rounded cursor-pointer"
+                  className="inline-flex items-center justify-center text-white text-[0.9375rem] font-normal bg-[#BA0000] border border-[#BA0000] transition duration-150 ease-in-out shadow-sm px-4 py-2 rounded cursor-pointer"
                 >
                   Save
                 </button>
@@ -220,7 +220,7 @@ const EditQuizComponent = () => {
                       {item.title}
                     </h5>
                   </div>
-                  <div className="border py-2 px-1 bg-[#2196F3] rounded text-white ">
+                  <div className="border py-2 px-1 bg-[#0097B2] rounded text-white ">
                     <a href={item.link} className="text-[1rem] ">
                       Edit
                     </a>

@@ -48,7 +48,7 @@ const CoursePage = () => {
     },
   ];
   return (
-    <div className="p-4 sm:pb-32 sm:px-12 md:px-20 lg:px-44 bg-gray-100 w-full overflow-y-auto">
+    <div className="p-4 sm:pb-32 pb-32 sm:px-12 md:px-20 lg:px-44 bg-gray-100 w-full overflow-y-auto">
       <nav className="text-[11px] text-gray-400 mb-4">
         <DashBoardHeader
           title="COURSES"

@@ -35,7 +35,7 @@ const CommunityList = ({ show }) => {
         show ? "max-h-56 opacity-100" : "max-h-0 opacity-0"
       }`}
     >
-      <div className="pl-6 sm:pl-8 bg-[#0097B2] text-white text-xs sm:text-sm py-2 space-y-1">
+      <div className="pl-6 sm:pl-8 bg-gray-50 text-[#000] text-xs sm:text-sm py-2 space-y-1">
         <ul>
           {listData.map((item, index) => (
             <li

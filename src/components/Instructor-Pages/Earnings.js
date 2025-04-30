@@ -67,13 +67,14 @@ const EarningComponent = () => {
   }, []);
 
   return (
-    <div className="p-6 pb-32 px-44 bg-gray-100 w-full overflow-y-auto">
+    <div className="p-4 sm:p-6 sm:pb-32 pb-32 h-full sm:px-10 lg:px-44 bg-gray-100 w-full overflow-y-auto">
       <DashBoardHeader title="EARNINGS" subTitle="Earnings" />
 
       <div className="w-full max-w-[944px] mx-auto">
+        {/* Chart Section */}
         <div className="bg-white rounded shadow-sm border border-gray-200 mb-6">
-          <div className="p-5">
-            <div className="flex flex-wrap items-center justify-between mb-4">
+          <div className="p-4 sm:p-5">
+            <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
               <select className="text-sm border border-gray-200 rounded px-3 py-2 shadow-inner bg-white">
                 <option>2015</option>
                 <option>2014</option>
@@ -87,20 +88,21 @@ const EarningComponent = () => {
                 </span>
               </div>
             </div>
-            <div className="relative h-[300px]">
+            <div className="relative h-[250px] sm:h-[300px]">
               <canvas ref={canvasRef} />
             </div>
           </div>
         </div>
 
+        {/* Earnings Table */}
         <div className="bg-white rounded shadow-sm border border-gray-200 mb-6">
-          <div className="px-5 py-3 border-b border-gray-200">
+          <div className="px-4 sm:px-5 py-3 border-b border-gray-200">
             <h5 className="text-base text-gray-700">
               Total <span className="text-[#0097B2]">$19,239</span>
             </h5>
           </div>
           <div className="overflow-x-auto">
-            <table className="w-full text-sm text-gray-700 border-collapse">
+            <table className="w-full text-sm text-gray-700 border-collapse min-w-[500px]">
               <thead className="bg-gray-100 text-xs text-gray-400 uppercase">
                 <tr>
                   <th className="px-3 py-2 text-left border-b">Course</th>
@@ -109,39 +111,9 @@ const EarningComponent = () => {
                 </tr>
               </thead>
               <tbody>
+                {/* Your static course data */}
                 {[
-                  {
-                    title: "Angular Routing In-Depth",
-                    sales: "34 Sales",
-                    image:
-                      "https://learnplus.demo.frontendmatter.com/assets/images/vuejs.png",
-                    fees: "$120 USD",
-                    revenue: "$8,737 USD",
-                  },
-                  {
-                    title: "Angular Unit Testing",
-                    sales: "38 Sales",
-                    image:
-                      "https://learnplus.demo.frontendmatter.com/assets/images/vuejs.png",
-                    fees: "---",
-                    revenue: "$2,521 USD",
-                  },
-                  {
-                    title: "Introduction to TypeScript",
-                    sales: "8 Sales",
-                    image:
-                      "https://learnplus.demo.frontendmatter.com/assets/images/github.png",
-                    fees: "---",
-                    revenue: "$1,413 USD",
-                  },
-                  {
-                    title: "Learn Angular Fundamentals",
-                    sales: "31 Sales",
-                    image:
-                      "https://learnplus.demo.frontendmatter.com/assets/images/gulp.png",
-                    fees: "---",
-                    revenue: "$1,234 USD",
-                  },
+                  /*...same as before...*/
                 ].map((course, index) => (
                   <tr key={index} className="border-t border-gray-200">
                     <td className="px-3 py-2">
@@ -149,10 +121,12 @@ const EarningComponent = () => {
                         <img
                           src={course.image}
                           alt="course"
-                          className="w-16 h-10 rounded mr-4 object-cover"
+                          className="w-12 sm:w-16 h-10 rounded mr-3 sm:mr-4 object-cover"
                         />
                         <div>
-                          <strong>{course.title}</strong>
+                          <strong className="text-sm sm:text-base">
+                            {course.title}
+                          </strong>
                           <div className="text-xs text-gray-400">
                             {course.sales}
                           </div>
@@ -172,6 +146,7 @@ const EarningComponent = () => {
           </div>
         </div>
 
+        {/* Bottom Navigation */}
         <NextPreviousButton />
       </div>
     </div>

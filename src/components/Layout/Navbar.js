@@ -39,15 +39,15 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-[#0097B2] flex flex-wrap items-center justify-between px-4 md:px-6 py-3">
-      <div className="flex items-center space-x-4">
+    <nav className="bg-[#0097B2] px-4 md:px-6">
+      <div className="flex justify-between">
         <button
-          className="text-[#8DBCDF] text-3xl"
+          className="text-[#fff] text-3xl"
           onClick={() => dispatch(toggleSidebar())}
         >
           <IoMenuOutline />
         </button>
-        <div className="flex items-center space-x-2">
+        <div className="">
           {/* <span className="text-white text-[36px]">
             <PiGraduationCapThin />
           </span>
@@ -55,10 +55,10 @@ const Navbar = () => {
           <img
             alt=""
             src="assets/amicaa.png"
-            className="sm:w-52 w-32 rounded h-12 sm:h-12"
+            className="sm:w-52 w-32 rounded  sm:"
           />
         </div>
-        <div className="hidden md:block relative text-[#000] mx-4 md:mx-6 w-full md:w-auto">
+        {/* <div className="hidden md:block relative text-[#000] mx-4 md:mx-6 w-full md:w-auto">
           <input
             type="text"
             placeholder="Search"
@@ -67,50 +67,50 @@ const Navbar = () => {
           <span className="absolute top-3 right-3">
             <GoSearch />
           </span>
-        </div>
-      </div>
+        </div> */}
 
-      <div className="flex items-center space-x-4 md:space-x-6 text-[#fff]">
-        <div className="hidden md:flex space-x-6">
-          {navLinks.map((link, index) => (
-            <li
-              key={index}
-              className="hover:underline hover:text-[#C7E5FC] text-[16px] font-bold list-none cursor-pointer"
-            >
-              {link.name}
-            </li>
-          ))}
-        </div>
-
-        {icons.map((icon, index) => (
-          <div key={index} className="relative text-[24px]">
-            {icon}
+        <div className="flex items-center space-x-4 md:space-x-6 text-[#fff]">
+          <div className="hidden md:flex space-x-6">
+            {navLinks.map((link, index) => (
+              <li
+                key={index}
+                className="hover:underline hover:text-[#C7E5FC] text-[16px] font-bold list-none cursor-pointer"
+              >
+                {link.name}
+              </li>
+            ))}
           </div>
-        ))}
 
-        <div className="flex items-center relative dropdown-container ml-2">
-          <img
-            src="https://randomuser.me/api/portraits/men/1.jpg"
-            alt="Profile"
-            className="w-9 h-9 rounded-full border border-white"
-          />
-          <FaCaretDown className="mt-2 cursor-pointer" onClick={handleOpen} />
-          {isOpen && (
-            <div className="absolute right-2 mt-7 text-gray-500 w-36 text-[13px] bg-white shadow-md rounded-lg">
-              <ul className="py-2">
-                {dropdownOptions.map((option, index) => (
-                  <li
-                    key={index}
-                    className={`flex gap-2 px-4 py-1 hover:text-gray-700 cursor-pointer ${
-                      option.textColor || ""
-                    }`}
-                  >
-                    {option.icon} {option.text}
-                  </li>
-                ))}
-              </ul>
+          {icons.map((icon, index) => (
+            <div key={index} className="relative text-[24px]">
+              {icon}
             </div>
-          )}
+          ))}
+
+          <div className="flex items-center relative dropdown-container ml-2">
+            <img
+              src="https://randomuser.me/api/portraits/men/1.jpg"
+              alt="Profile"
+              className="w-9 h-9 rounded-full border border-white"
+            />
+            <FaCaretDown className="mt-2 cursor-pointer" onClick={handleOpen} />
+            {isOpen && (
+              <div className="absolute right-1 top-12 text-gray-500 w-36 text-[13px] bg-white shadow-md rounded-lg">
+                <ul className="py-2">
+                  {dropdownOptions.map((option, index) => (
+                    <li
+                      key={index}
+                      className={`flex gap-2 px-4 py-1 hover:text-gray-700 cursor-pointer ${
+                        option.textColor || ""
+                      }`}
+                    >
+                      {option.icon} {option.text}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </nav>
